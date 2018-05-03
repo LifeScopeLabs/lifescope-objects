@@ -2,9 +2,13 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
 
-var config = {
+module.exports = {
+  entry: path.resolve(__dirname + '/src/plugin.js'),
   output: {
     path: path.resolve(__dirname + '/dist/'),
+    filename: 'lifescope-objects.min.js',
+    libraryTarget: 'umd',
+    library: 'lifescope-objects'
   },
   module: {
     rules: [
@@ -26,15 +30,3 @@ var config = {
     ]
   }
 };
-
-
-module.exports = [
-  merge(config, {
-    entry: path.resolve(__dirname + '/src/plugin.js'),
-    output: {
-      filename: 'vue-lifescope-objects.min.js',
-      libraryTarget: 'window',
-      library: 'VueLifescopeObjects',
-    }
-  })
-];

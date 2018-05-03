@@ -1,13 +1,13 @@
 # vue-clock-simple
 
-A Vue component that shows a clock.
+A Vue component that templates lifescope objects.
 
 This isn't particularly useful, it's used as a demo for how to publish Vue components to NPM!
 
 ## Installation
 
 ```js
-npm i --save-dev vue-clock-simple
+npm i --save-dev vue-lifescope-objects
 ```
 
 ### Browser
@@ -16,22 +16,24 @@ Include the script file, then install the component with `Vue.use(VueClock);` e.
 
 ```html
 <script type="text/javascript" src="node_modules/vuejs/dist/vue.min.js"></script>
-<script type="text/javascript" src="node_modules/vue-clock-simple/dist/vue-clock.min.js"></script>
+<script type="text/javascript" src="node_modules/vue-lifescope-objects/dist/vue-lifescope-objects.min.js"></script>
 <script type="text/javascript">
-  Vue.use(VueClock);
+  Vue.use(lifescopeObjects);
 </script>
 ```
 
 ### Module
 
 ```js
-import VueClock from 'vue-clock';
+import lifescopeObjects from 'lifescope-objects';
 ```
 
 ## Usage
 
-Once installed, it can be used in a template as simply as:
+Vue.LSOBj.[Lifescope Object]
 
-```html
-<vue-clock></vue-clock>
-```
+
+npm link
+yarn link
+
+yarn link lifescope-objects
