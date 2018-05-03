@@ -7,36 +7,24 @@ var config = {
     path: path.resolve(__dirname + '/dist/'),
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel',
-        include: __dirname,
-        exclude: /node_modules/
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader'
+        }
       },
       {
         test: /\.vue$/,
-        loader: 'vue'
+        use: 'vue'
       },
       {
         test: /\.css$/,
-        loader: 'style!less!css'
+        use: 'style!less!css'
       }
     ]
-  },
-  externals: {
-    moment: 'moment'
-  },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin( {
-      minimize : true,
-      sourceMap : false,
-      mangle: true,
-      compress: {
-        warnings: false
-      }
-    } )
-  ]
+  }
 };
 
 
@@ -44,18 +32,9 @@ module.exports = [
   merge(config, {
     entry: path.resolve(__dirname + '/src/plugin.js'),
     output: {
-      filename: 'vue-clock.min.js',
+      filename: 'vue-lifescope-objects.min.js',
       libraryTarget: 'window',
-      library: 'VueClock',
-    }
-  }),
-  merge(config, {
-    entry: path.resolve(__dirname + '/src/Clock.vue'),
-    output: {
-      filename: 'vue-clock.js',
-      libraryTarget: 'umd',
-      library: 'vue-clock',
-      umdNamedDefine: true
+      library: 'VueLifescopeObjects',
     }
   })
 ];
