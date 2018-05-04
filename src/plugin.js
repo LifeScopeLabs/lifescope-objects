@@ -260,8 +260,25 @@ class User extends LSObj {
   }
 };
 
-module.exports = {
-  install: function (Vue, options) {
+module.exports =  {
+    LSObj,
+    Connection,
+    AssociationSession,
+    Contacts,
+    Content,
+    Event,
+    Location,
+    Provider,
+    Person,
+    Place,
+    Search,
+    Session,
+    Tag,
+    Thing,
+    User
+};
+
+  /*install: function (Vue, options) {
   
     Vue.LSObj = {
       LSObj,
@@ -280,5 +297,4 @@ module.exports = {
       Thing,
       User
     }
-  }
-};
+  },*/
